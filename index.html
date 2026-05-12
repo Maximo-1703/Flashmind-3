@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashmind - Tu Red de Estudio</title>
+    <link rel="icon" type="image/png" href="imgs/flashmind2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+<aside class="sidebar">
+    <div class="sidebar-top">
+        <img src="imgs/flashmind.png" id="sidebarToggle"
+            style="cursor: pointer; display:block; margin-bottom: 20px;"
+            onclick="toggleSidebar()">
+
+        <div class="nav-group">
+            <button class="nav-item" onclick="handleNavClick(event, 'inicio', 'grupo-inicio')">
+                <span class="icon">🏠</span><span class="label">Inicio</span>
+            </button>
+            <div class="nav-subgroup" id="grupo-inicio">
+                <button class="sub-item" onclick="showSection('inicio')">Panel principal</button>
+                <button class="sub-item">Novedades</button>
+                <button class="sub-item">Actividad reciente</button>
+            </div>
+        </div>
+
+        <div class="nav-group">
+            <button class="nav-item" onclick="handleNavClick(event, 'clases', 'grupo-clases')">
+                <span class="icon">📚</span><span class="label">Mis Clases</span>
+            </button>
+            <div class="nav-subgroup" id="grupo-clases">
+                <button class="sub-item">Matemáticas</button>
+                <button class="sub-item">Física</button>
+                <button class="sub-item">+ Nueva clase</button>
+            </div>
+        </div>
+
+        <div class="nav-group">
+            <button class="nav-item" onclick="handleNavClick(event, 'ia', 'grupo-ia')">
+                <span class="icon">🤖</span><span class="label">Flashmind AI</span>
+            </button>
+            <div class="nav-subgroup" id="grupo-ia">
+                <button class="sub-item">Chat IA</button>
+                <button class="sub-item">Resumir apuntes</button>
+                <button class="sub-item">Generar flashcards</button>
+                <button class="sub-item">Generar evaluaciones</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="settings-btn" onclick="toggleSettings(true)">
+        ⚙️
+    </button>
+</aside>
+
+    <main class="content">
+        <header class="navbar">
+            <img src="imgs/anonymous.png" class="profile-pic" alt="Perfil">
+            <button class="auth-btn" id="loginBtn" onclick="toggleModal(true)">Iniciar Sesión</button>
+        </header>
+
+        <section id="home-view" class="dashboard">
+            <div class="card-container">
+                <div class="main-card yellow" onclick="showSection('clases')">
+                    <div class="card-text">Explora tus clases</div>
+                    <img src="estudiantes.png" class="card-img">
+                </div>
+                <div class="main-card red">
+                    <div class="card-text">Grupos de estudio</div>
+                    <img src="mapa.png" class="card-img">
+                </div>
+                <div class="main-card blue" onclick="showSection('ia')">
+                    <div class="card-text">Pregúntale a la IA</div>
+                    <img src="robot.png" class="card-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="ia-view" class="chat-interface" style="display:none;">
+            <div class="chat-window" id="chatBox">
+                <div class="message ai">✦ ¡Hola! ¿En qué puedo ayudarte hoy?</div>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Escribe una pregunta sobre tus materias...">
+                <button id="sendBtn">Enviar</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="authModal" class="modal">
+        <div class="modal-body">
+                <button class="close-btn" onclick="toggleModal(false)">&times;</button>
+                <div class="modal-container">
+                <h2>Únete a Flashmind</h2>
+                <form id="registro-form">
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <button type="submit" class="social-btn mail">
+                        <i class="fa-solid fa-envelope"></i> Registrarse con Correo
+                    </button>
+                </form>
+                <p class="separator">o usa redes sociales</p>
+                <div class="social-buttons">
+                    <button class="social-btn mail" onclick="manejarAuth()">Continuar</button>
+                    <button class="social-btn fb">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook
+                    </button>
+                    <button class="social-btn ig" onclick="window.open('https://www.instagram.com/flashmind_usm/?hl=es', '_blank')">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+
+<script src="script.js"></script>
+<script src="notificaciones.js"></script>
+<script src="ranking.js"></script>
+</body>
+</html>

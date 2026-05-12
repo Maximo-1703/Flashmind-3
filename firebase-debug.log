@@ -1,0 +1,39 @@
+[debug] [2026-05-12T17:30:14.464Z] ----------------------------------------------------------------------
+[debug] [2026-05-12T17:30:14.473Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\maxju\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2026-05-12T17:30:14.474Z] CLI Version:   15.17.0
+[debug] [2026-05-12T17:30:14.474Z] Platform:      win32
+[debug] [2026-05-12T17:30:14.474Z] Node Version:  v24.15.0
+[debug] [2026-05-12T17:30:14.474Z] Time:          Tue May 12 2026 13:30:14 GMT-0400 (hora estándar de Chile)
+[debug] [2026-05-12T17:30:14.474Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-12T17:30:14.476Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-05-12T17:30:17.284Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-12T17:30:17.284Z] > authorizing via signed-in user (maxjuliancorral@gmail.com)
+[debug] [2026-05-12T17:30:17.285Z] [iam] checking project flashmind-usm for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-05-12T17:30:17.285Z] Checked if tokens are valid: false, expires at: 1778547968736
+[debug] [2026-05-12T17:30:17.286Z] Checked if tokens are valid: false, expires at: 1778547968736
+[debug] [2026-05-12T17:30:17.286Z] > refreshing access token with scopes: []
+[debug] [2026-05-12T17:30:17.287Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-05-12T17:30:17.287Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-12T17:30:17.996Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-05-12T17:30:17.996Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-12T17:30:18.004Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/flashmind-usm:testIamPermissions [none]
+[debug] [2026-05-12T17:30:18.004Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/flashmind-usm:testIamPermissions  x-goog-user-project=flashmind-usm
+[debug] [2026-05-12T17:30:18.004Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flashmind-usm:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-05-12T17:30:18.107Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-05-12T17:30:18.107Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-05-12T17:30:19.734Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/flashmind-usm:testIamPermissions 403
+[debug] [2026-05-12T17:30:19.735Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flashmind-usm:testIamPermissions {"error":{"code":403,"message":"Caller does not have required permission to use project flashmind-usm. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=flashmind-usm and then retry. Propagation of the new permission may take a few minutes.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"USER_PROJECT_DENIED","domain":"googleapis.com","metadata":{"consumer":"projects/flashmind-usm","consoleUrl":"https://console.developers.google.com/iam-admin/iam?project=flashmind-usm","containerInfo":"flashmind-usm","service":"cloudresourcemanager.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Caller does not have required permission to use project flashmind-usm. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=flashmind-usm and then retry. Propagation of the new permission may take a few minutes."},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developer console IAM admin","url":"https://console.developers.google.com/iam-admin/iam?project=flashmind-usm"}]}]}}
+[debug] [2026-05-12T17:30:19.735Z] [iam] error while checking permissions, command may fail: Request to https://cloudresourcemanager.googleapis.com/v1/projects/flashmind-usm:testIamPermissions had HTTP Error: 403, Caller does not have required permission to use project flashmind-usm. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=flashmind-usm and then retry. Propagation of the new permission may take a few minutes.
+[debug] [2026-05-12T17:30:19.736Z] Checked if tokens are valid: true, expires at: 1778610616997
+[debug] [2026-05-12T17:30:19.736Z] Checked if tokens are valid: true, expires at: 1778610616997
+[debug] [2026-05-12T17:30:19.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flashmind-usm [none]
+[debug] [2026-05-12T17:30:20.397Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flashmind-usm 403
+[debug] [2026-05-12T17:30:20.397Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flashmind-usm {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-05-12T17:30:20.398Z] Request to https://firebase.googleapis.com/v1beta1/projects/flashmind-usm had HTTP Error: 403, The caller does not have permission
+[debug] [2026-05-12T17:30:21.207Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/flashmind-usm had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\maxju\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\maxju\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:333:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[error] 
+[error] Error: Failed to get Firebase project flashmind-usm. Please make sure the project exists and your account has permission to access it.
